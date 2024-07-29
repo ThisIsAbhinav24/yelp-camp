@@ -41,7 +41,8 @@ router.post(
     failureRedirect: "/login",
   }),
   (req, res) => {
-    const redirectUrl = res.locals.returnTo 
+    
+    const redirectUrl = res.locals.returnTo?res.locals.returnTo:'/campgrounds';
     req.flash("success", "Welcome Back!");
     res.redirect(redirectUrl);
   }
